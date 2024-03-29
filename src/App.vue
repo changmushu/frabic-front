@@ -1,77 +1,12 @@
 <script setup>
 // import { RouterLink, RouterView } from 'vue-router'
 // import HelloWorld from './components/HelloWorld.vue'
-import { login, register } from '../src/api/user'
-import { ref } from 'vue'
-const loginForm = ref({
-  username: '',
-  password: ''
-})
+import LoginPage from './views/login/LoginPage.vue'
 
-const registerForm = ref({
-  username: '',
-  password: '',
-  userType: ''
-})
-
-const options = [
-  {
-    value: '种植户',
-    label: '种植户'
-  },
-  {
-    value: '工厂',
-    label: '工厂'
-  },
-  {
-    value: '运输司机',
-    label: '运输司机'
-  },
-  {
-    value: '商店',
-    label: '商店'
-  },
-  {
-    value: '消费者',
-    label: '消费者'
-  }
-]
-
-function handleLogin() {
-  console.log(loginForm.value.username, loginForm.value.password)
-  login(loginForm.value).then((res) => {
-    console.log(res)
-  })
-}
-
-function handleRegister(){
-  register(registerForm.value).then((res)=>{
-    console.log(res)
-  })
-}
 </script>
 
 <template>
-  <div>
-    <el-input v-model="loginForm.username" style="width: 240px" placeholder="Please input" />
-    <el-input
-      v-model="loginForm.password"
-      style="width: 240px"
-      type="password"
-      placeholder="Please input password"
-      show-password
-    />
-    <el-select v-model="registerForm.userType" placeholder="Select" style="width: 240px">
-      <el-option
-        v-for="item in options"
-        :key="item.value"
-        :label="item.label"
-        :value="item.value"
-      />
-    </el-select>
-    <el-button @click="handleLogin()">login</el-button>
-    <el-button @click="handleRegister()">register</el-button>
-  </div>
+  <LoginPage/>
   <!-- <header>
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
