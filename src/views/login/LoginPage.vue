@@ -2,8 +2,13 @@
 import { login, register } from '@/api/user'
 import { ref } from 'vue'
 import { ElMessage } from 'element-plus'
+import { useUserStore } from '@/stores/userStore'
+import { useRouter, useRoute } from 'vue-router'
 
 const tabRef = ref('login')
+
+const router = useRouter()
+const route = useRoute()
 
 const isLoading = ref(false)
 
@@ -41,6 +46,8 @@ const options = [
   }
 ]
 
+const store = useUserStore()
+
 // const loginSccessOpen = () => {
 //   ElMessage('登陆成功！')
 // }
@@ -53,8 +60,12 @@ function handleLogin() {
         message: res.message,
         type: 'success'
       })
+      console.log(res)
+      store.setToken(res.token)
+      router.push("/123")
+      console.log(store.token)
       isLoading.value = false
-    }else{
+    } else {
       isLoading.value = false
     }
   })
@@ -68,6 +79,7 @@ function handleRegister() {
         message: res.message + 'txid' + res.txid,
         type: 'success'
       })
+      tabRef.value = 'login'
       isLoading.value = false
     } else {
       ElMessage({
