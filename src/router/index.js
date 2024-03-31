@@ -5,10 +5,21 @@ import { useUserStore } from '@/stores/userStore'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    // {
+    //   path: '/',
+    //   name: 'test',
+    //   component: HomeView
+    // },
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: () => import('../layout/index.vue'),
+      children: [
+        {
+          path: 'home',
+          component: () => import('../views/home/HomePage.vue')
+        }
+      ]
     },
     {
       path: '/about',

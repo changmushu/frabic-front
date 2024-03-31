@@ -62,7 +62,7 @@ function handleLogin() {
       })
       console.log(res)
       store.setToken(res.token)
-      router.push("/123")
+      router.push("/home")
       console.log(store.token)
       isLoading.value = false
     } else {
