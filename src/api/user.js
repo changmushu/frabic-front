@@ -16,12 +16,12 @@ export function register(data) {
   })
 }
 
-export function getInfo(token) {
+export function getUserInfo(token) {
   return request({
     url: '/getInfo',
     method: 'post',
     headers: {
-      Authorization: `Bearer ${token}`
+      Authorization: `${token}`
     }
   })
 }

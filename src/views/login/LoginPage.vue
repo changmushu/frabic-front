@@ -60,10 +60,10 @@ function handleLogin() {
         message: res.message,
         type: 'success'
       })
-      console.log(res)
+      // console.log(res)
       store.setToken(res.token)
+      store.getUserInfoAction(res.token)
       router.push("/home")
-      console.log(store.token)
       isLoading.value = false
     } else {
       isLoading.value = false

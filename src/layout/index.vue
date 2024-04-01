@@ -1,6 +1,7 @@
 <script setup>
 import HeaderLayout from './Header/HeaderLayout.vue'
 import AsideLayout from './Aside/AsideLayout.vue'
+
 </script>
 
 <template>
