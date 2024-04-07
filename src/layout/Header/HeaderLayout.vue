@@ -16,15 +16,15 @@ function handleLogout() {
 }
 
 function pushUserInfo() {
-  // router.push('/userInfo')
-  getAllUsers(store.token).then((res) => {
-    console.log(res)
-  })
+  router.push('/userInfo')
+  // getAllUsers(store.token).then((res) => {
+  //   console.log(res)
+  // })
 }
 </script>
 
 <template>
-  <div class="border-b h-full flex justify-end items-center pr-[20px]">
+  <div class="border-b h-[60px] flex justify-end items-center pr-[20px]">
     <el-dropdown v-if="store.userInfo" class="border-[0]">
       <span>
         {{ store.userInfo.userName }}
@@ -39,4 +39,5 @@ function pushUserInfo() {
   </div>
 </template>
 
-<style></style>
+<style>
+</style>

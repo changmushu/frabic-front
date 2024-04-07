@@ -36,6 +36,17 @@ export function getAllUsers(token) {
   })
 }
 
+export function updateUserInfo(token, data) {
+  return request({
+    url: '/updateUserInfo',
+    method: 'post',
+    headers: {
+      Authorization: `${token}`
+    },
+    data
+  })
+}
+
 export function logout() {
   return request({
     url: '/logout',

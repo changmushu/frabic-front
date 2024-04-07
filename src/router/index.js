@@ -22,6 +22,10 @@ const router = createRouter({
         {
           path: 'userInfo',
           component: () => import('../views/userInfo/UserInfoPage.vue')
+        },
+        {
+          path: 'user/userManage',
+          component: () => import('../views/userManage/UserManagePage.vue')
         }
       ]
     },
@@ -38,6 +42,10 @@ const router = createRouter({
       name: 'Login',
       component: () => import('../views/login/LoginPage.vue')
     },
+    // {
+    //   path: '127.0.0.1:8080',
+    //   name: 'fabric'
+    // },
     {
       path: '/404',
       component: () => import('../views/404.vue'),

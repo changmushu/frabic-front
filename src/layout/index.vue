@@ -12,10 +12,14 @@ import AsideLayout from './Aside/AsideLayout.vue'
         <el-header class="p-0">
           <HeaderLayout />
         </el-header>
-        <el-main><RouterView /></el-main>
+        <el-main class="bg-[#e5e7eb] p-[10px]"><RouterView /></el-main>
       </el-container>
     </el-container>
   </div>
 </template>
 
-<style></style>
+<style>
+.el-main {
+  height: calc(100vh - 60px);
+}
+</style>

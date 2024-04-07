@@ -7,6 +7,7 @@ const route = useRoute()
 function pushHome() {
   router.push('/home')
 }
+
 </script>
 
 <template>
@@ -17,7 +18,7 @@ function pushHome() {
     >
       物流溯源
     </div>
-    <div class="w-full border-b">
+    <div class="aside w-full border-b">
       <el-menu>
         <el-sub-menu index="1">
           <template #title>
@@ -28,7 +29,7 @@ function pushHome() {
             <el-menu-item index="1-1">管理员权限管理</el-menu-item>
           </el-menu-item-group>
           <el-menu-item-group>
-            <el-menu-item index="1-2">用户注册管理</el-menu-item>
+            <el-menu-item index="1-2" @click="router.push('/user/userManage')">用户管理</el-menu-item>
           </el-menu-item-group>
           <el-menu-item-group>
             <el-menu-item index="1-3">实名认证管理</el-menu-item>
@@ -117,11 +118,15 @@ function pushHome() {
         </el-sub-menu>
         <el-menu-item index="7">
           <el-icon><ChromeFilled /></el-icon>
-          <span>区块链浏览器</span>
+          <span><a href="http://127.0.0.1:8080" target="_blank">区块链浏览器</a></span>
         </el-menu-item>
       </el-menu>
     </div>
   </div>
 </template>
 
-<style></style>
+<style>
+.aside{
+  height: calc(100vh - 60px);
+}
+</style>
