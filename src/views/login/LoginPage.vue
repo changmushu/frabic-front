@@ -25,24 +25,28 @@ const registerForm = ref({
 
 const options = [
   {
-    value: '种植户',
-    label: '种植户'
+    value: '商户',
+    label: '商户'
   },
   {
-    value: '工厂',
-    label: '工厂'
+    value: '物流',
+    label: '物流'
   },
   {
-    value: '运输司机',
-    label: '运输司机'
-  },
-  {
-    value: '商店',
-    label: '商店'
+    value: '门店',
+    label: '门店'
   },
   {
     value: '消费者',
     label: '消费者'
+  },
+  {
+    value: '政府',
+    label: '政府'
+  },
+  {
+    value: '管理员',
+    label: '管理员'
   }
 ]
 
@@ -76,7 +80,7 @@ function handleRegister() {
   register(registerForm.value).then((res) => {
     if (res.code === 200) {
       ElMessage({
-        message: res.message + 'txid' + res.txid,
+        message: res.message + 'TxID: ' + res.txid,
         type: 'success'
       })
       tabRef.value = 'login'

@@ -21,11 +21,15 @@ const router = createRouter({
         },
         {
           path: 'userInfo',
-          component: () => import('../views/userInfo/UserInfoPage.vue')
+          component: () => import('../views/user/userInfo/UserInfoPage.vue')
         },
         {
           path: 'user/userManage',
-          component: () => import('../views/userManage/UserManagePage.vue')
+          component: () => import('../views/user/userManage/UserManagePage.vue')
+        },
+        {
+          path: 'user/RealnameAuthentication',
+          component: () => import('../views/user/realnameAuthentication/RealnameAuthentication.vue')
         }
       ]
     },

@@ -25,17 +25,17 @@ function pushHome() {
             <el-icon><User /></el-icon>
             <span>用户管理</span>
           </template>
+          <!-- <el-menu-item-group>
+            <el-menu-item index="1-1">管理员审核</el-menu-item>
+          </el-menu-item-group> -->
           <el-menu-item-group>
-            <el-menu-item index="1-1">管理员权限管理</el-menu-item>
+            <el-menu-item index="1-1" @click="router.push('/user/userManage')">用户管理</el-menu-item>
           </el-menu-item-group>
           <el-menu-item-group>
-            <el-menu-item index="1-2" @click="router.push('/user/userManage')">用户管理</el-menu-item>
+            <el-menu-item index="1-2" @click="router.push('/user/RealnameAuthentication')">实名认证管理</el-menu-item>
           </el-menu-item-group>
           <el-menu-item-group>
-            <el-menu-item index="1-3">实名认证管理</el-menu-item>
-          </el-menu-item-group>
-          <el-menu-item-group>
-            <el-menu-item index="1-4">用户奖罚权限</el-menu-item>
+            <el-menu-item index="1-3">用户奖罚权限</el-menu-item>
           </el-menu-item-group>
         </el-sub-menu>
         <el-sub-menu index="2">
